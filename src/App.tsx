@@ -49,10 +49,11 @@ function App() {
                     <Routes >
                         <Route path={'/'} element={<Navigate to={PATH.PAGE1}/>}/>
                         <Route path={PATH.PAGE1} element={<Adidas/>}/>
-
                         <Route path={PATH.PAGE2} element={<Puma/>}/>
                         <Route path={PATH.PAGE3} element={<Abibas/>}/>
-                        <Route path={'/ADIDAS/:id'} element={<Model/>}/>
+                        {/*<Route path={'/adidas/:id/:model'} element={<Model/>}/>*/}
+                        {/*<Route path={'/puma/:id/:model'} element={<Model/>}/>*/}
+                        <Route path={'/:brand/:id/:model'} element={<Model/>}/>
 
                         <Route path={'/*'} element={<Error404/>}/>
                        {/* <Route path={PATH.ERROR404} element={<Error404/>}/>
