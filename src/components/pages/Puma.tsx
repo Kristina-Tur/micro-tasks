@@ -41,10 +41,10 @@ export const pumaArr:PumaItem[] = [
 export const Puma = () => {
     return (
         <div>
-            <h2>PUMA</h2>
+            <h2>Puma</h2>
             <div style={{display: 'flex', justifyContent: 'center', gap: '20px'}}>
                 {pumaArr.map((el) => (
-                        <Link key={el.id} to={`/puma/${el.id}/${el.model}`}>
+                        <Link key={el.id} to={`/puma/${el.id}`}>
                             <img src={el.picture} alt={el.model} style={{width: '200px'}}/>
                         </Link>
                     )

@@ -40,10 +40,10 @@ export const adidasArr:AdidasItem[] = [
 export const Adidas = () => {
     return (
         <div id={''}>
-           <h2> ADIDAS</h2>
+           <h2> Adidas</h2>
             <div style={{display: 'flex', justifyContent: 'center', gap: '20px'}}>
                 {adidasArr.map((el) => (
-                    <Link key={el.id} to={`/adidas/${el.id}/${el.model}`}>
+                    <Link key={el.id} to={`/adidas/${el.id}`}>
                         <img src={el.picture} alt={el.model} style={{width: '200px'}}/>
                     </Link>
                 )

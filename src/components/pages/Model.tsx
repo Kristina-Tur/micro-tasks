@@ -29,14 +29,11 @@ const modelData: ModelType = {
 }
 
 export const Model = () => {
-    const {id, brand, model} = useParams()
-    // console.log('model: ', model)
-    // console.log('currentModelArr: ', modelData['adidas'])
+    const {id, brand} = useParams()
     const currentModel = brand
         ? modelData[brand].find(el => el.id === Number(id))
         : null
 
-    // console.log(model)
     return (
         <div>
             {currentModel

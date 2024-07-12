@@ -6,11 +6,13 @@ import {Abibas} from "./components/pages/Abibas";
 import {Navigate, NavLink, Route, Routes} from "react-router-dom";
 import {Error404} from "./components/pages/Error404";
 import {Model} from "./components/pages/Model";
+import {Prices} from "./components/Prices";
 
 export const PATH = {
-    PAGE1: '/ADIDAS',
-    PAGE2: '/PUMA',
-    PAGE3: '/ABIBAS',
+    PAGE1: '/Adidas',
+    PAGE2: '/Puma',
+    PAGE3: '/Abibas',
+    PAGE4: '/Prices',
     ERROR404: '/error404'
 }
 
@@ -21,42 +23,42 @@ function App() {
             <div className={styles.body}>
                 <div className={styles.nav}>
                     <div>
-                        <NavLink
-                            to={PATH.PAGE1}
-                            className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
-                        >
+                        <NavLink to={PATH.PAGE1}
+                                 className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}>
                             Adidas
                         </NavLink>
                     </div>
                     <div>
-                        <NavLink
-                            to={PATH.PAGE2}
-                            className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}>
+                        <NavLink to={PATH.PAGE2}
+                                 className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}>
                             Puma
                         </NavLink>
                     </div>
                     <div>
-                        <NavLink
-                            to={PATH.PAGE3}
-                            className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
-                        >
+                        <NavLink to={PATH.PAGE3}
+                                 className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}>
                             Abibas
+                        </NavLink>
+                    </div>
+                    <div>
+                        <NavLink to={PATH.PAGE4}
+                                 className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}>
+                            Prices
                         </NavLink>
                     </div>
 
                 </div>
                 <div className={styles.content}>
-                    <Routes >
+                    <Routes>
                         <Route path={'/'} element={<Navigate to={PATH.PAGE1}/>}/>
                         <Route path={PATH.PAGE1} element={<Adidas/>}/>
                         <Route path={PATH.PAGE2} element={<Puma/>}/>
                         <Route path={PATH.PAGE3} element={<Abibas/>}/>
-                        {/*<Route path={'/adidas/:id/:model'} element={<Model/>}/>*/}
-                        {/*<Route path={'/puma/:id/:model'} element={<Model/>}/>*/}
-                        <Route path={'/:brand/:id/:model'} element={<Model/>}/>
+                        <Route path={PATH.PAGE4} element={<Prices/>}/>
+                        <Route path={'/:brand/:id'} element={<Model/>}/>
 
                         <Route path={'/*'} element={<Error404/>}/>
-                       {/* <Route path={PATH.ERROR404} element={<Error404/>}/>
+                        {/* <Route path={PATH.ERROR404} element={<Error404/>}/>
                         <Route path={'/*'} element={<Navigate to={'/error404'}/>}/>*/}
                     </Routes>
                 </div>
