@@ -19,7 +19,7 @@ type ModelItem = {
     picture: string;
 }
 
-type ModelType = {
+export type ModelType = {
     [key: string]: ModelItem[]
 }
 
