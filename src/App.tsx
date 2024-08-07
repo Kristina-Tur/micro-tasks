@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./components/Site.module.css";
-import {NavLink, Outlet} from "react-router-dom";
+import {Link, NavLink, Outlet, useNavigate} from "react-router-dom";
 import {ProtectedPage} from "./components/pages/ProtectedPage";
 
 export const PATH = {
@@ -15,6 +15,10 @@ export const PATH = {
 }
 
 function App() {
+    const navigate = useNavigate()
+    const backHandler = () => {
+        navigate(-1)
+    }
     return (
         <div>
             <div className={styles.header}><h1>HEADER</h1></div>
@@ -53,6 +57,16 @@ function App() {
 
                 </div>
                 <div className={styles.content}>
+                    <div className={styles.HorizontalNavigation}>
+                        <Link to={'/'}
+                                 className={styles.LinkLikeButton}>
+                            Home
+                        </Link>
+                        <Link to={'/'}
+                              className={styles.LinkLikeButton}>
+                            <button className={styles.ButtonLikeLink} onClick={backHandler}>Back</button>
+                        </Link>
+                    </div>
                     <Outlet/>
                     {/*<Routes>
                         <Route path={'/'} element={<Navigate to={PATH.Adidas}/>}/>

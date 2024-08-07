@@ -12,12 +12,12 @@ import {ProtectedRoute} from "./ProtectedRoute";
 import {LoginPage} from "../components/pages/LoginPage";
 
 export const PrivateRoutes = () => {
-    const isAuth = false
+    const isAuth = true
     return isAuth ? <Outlet/> : <Navigate to={'/login'}/>
 };
 
 const publicRoutes: RouteObject[] = [
-    /*{path: {'/'},element: <Navigate to={PATH.Adidas}/>},*/
+    {path: '/',element: <Navigate to={PATH.Adidas}/>},
     {path: '/*', element: <Error404/>},
     {path: PATH.ERROR, element: <Error404/>},
     {path: PATH.Adidas, element: <Adidas/>},
